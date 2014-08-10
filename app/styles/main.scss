@@ -4,13 +4,14 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 
 @import "colors.scss";
 @import "_variables.scss";
-@import "sass-bootstrap/lib/bootstrap";
+@import "../bower_components/sass-bootstrap/lib/bootstrap";
 @import "navbar.scss";
 @import "home.scss";
 @import "stream.scss";
 @import "footer.scss";
 @import "cgu.scss";
-@import "sdk-dashboard/src/autocomplete.scss";
+//@import "../../../sdk-dashboard/src/autocomplete.scss";
+@import "../../../../sdk-dashboard/src/autocomplete.scss";
 
 
 @import "user/login/login.scss";

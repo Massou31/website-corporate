@@ -1,0 +1,13 @@
+---
+- hosts: website-corporate
+  sudo: yes
+  gather_facts: true
+  roles:
+    - utilities
+    - nodejs
+    - nginx
+  vars:
+    app:
+      name: website-corporate
+      path: /var/www/website-corporate/current
+      port: 9000

@@ -1,0 +1,3 @@
+---
+nginx_root: "{{ app.path }}/current"
+nginx_server_name: localhost

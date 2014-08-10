@@ -1,0 +1,28 @@
+---
+- name: Ensure ansible's apt_repository dependency is installed
+  apt: pkg=python-apt state=latest update_cache=true cache_valid_time={{ apt_cache_valid_time }}
+
+- name: Ensure nodejs apt repository is up to date
+  apt_repository: repo={{ nodejs_ppa }}
+
+- name: Ensure nodejs latest stable is installed
+  apt: pkg=nodejs state=latest update_cache=true cache_valid_time={{ apt_cache_valid_time }}
+
+- name: Ensure mandatory npm packages are installed
+  npm: name={{ item }} global=yes
+  with_items:
+    - yo
+    - generator-angular
+    - grunt-cli
+    - bower
+
+- name: Ensure packages in package.json are installed
+  npm: path={{ app.path }}
+
+- name: Ensure compass, bundle and capistrano are installed
+  gem: name={{ item }} state=latest include_dependencies=yes user_install=no
+  with_items:
+    - compass
+    - capistrano
+    - bundle
+    - bundler

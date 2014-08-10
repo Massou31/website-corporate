@@ -33,12 +33,18 @@
     "karma": "~0.12.9",
     "karma-ng-html2js-preprocessor": "~0.1.0",
     "grunt-aws-s3": "~0.8.1",
-    "grunt-contrib-compress": "~0.8.0"
+    "grunt-contrib-compress": "~0.8.0",
+    "grunt-cli": ""
   },
   "engines": {
     "node": ">=0.8.0"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "postinstall": "bower install --config.interactive=false && grunt server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alkemics/website-corporate.git"
   }
 }
